@@ -12,4 +12,4 @@ Build Alpine:
     - go get ./...
     - go build
   artifacts:
-    untracted: true
+    untracked: true
