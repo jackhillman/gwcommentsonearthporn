@@ -3,13 +3,13 @@ image: golang:alpine
 stages:
   - build
 
-before_script:
-  - apk add --update git
-  - ln -s /builds /go/src/gitlab.com
-  - cd /go/src/gitlab.com/${CI_PROJECT_PATH}
-
-build-my-project:
+Build Alpine:
   stage: build
   script:
+    - apk add --update git
+    - ln -s /builds /go/src/gitlab.com
+    - cd /go/src/gitlab.com/${CI_PROJECT_PATH}
     - go get ./...
     - go build
+  artifacts:
+    untracted: true
