@@ -11,5 +11,5 @@ before_script:
 build-my-project:
   stage: build
   script:
-    - go install
+    - go get ./...
     - go build
