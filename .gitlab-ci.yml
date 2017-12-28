@@ -5,12 +5,11 @@ stages:
 
 before_script:
   - apk add --update git
-  - go get github.com/tools/godep
   - ln -s /builds /go/src/gitlab.com
   - cd /go/src/gitlab.com/${CI_PROJECT_PATH}
 
 build-my-project:
   stage: build
   script:
-    - godep restore
-    - godep go build
+    - go install
+    - go build
